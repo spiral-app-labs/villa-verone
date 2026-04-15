@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D5A3;
+  --color-gold-dark: #A67C35;
+  --color-red-deep: #8B1A1A;
+  --color-red-light: #B22222;
+  --color-cream: #F5F0E8;
+  --color-stone: #6B6B6B;
+  --color-dark-brown: #2C1810;
+  --color-dark: #1A1A1A;
+
+  --font-playfair: var(--font-playfair-var), 'Playfair Display', serif;
+  --font-lato: var(--font-lato-var), 'Lato', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-lato);
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.divider-ornate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+}
+
+.divider-ornate::before,
+.divider-ornate::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #C9A84C;
+}
+
+.parallax-hero {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+/* Stone texture overlay */
+.stone-texture {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(139, 26, 26, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+}
